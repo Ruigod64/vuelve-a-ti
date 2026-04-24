@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Taller Gratuito de Escritura Terapéutica 'Vuelve a Ti' con Angélica Montelongo. Inicia el 20 de Mayo. Regístrate ahora." />
+  <title>Vuelve a Ti — Taller Gratuito de Escritura Terapéutica · Angélica Montelongo</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" />
+
+  <!-- Preconnect Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./assets/css/animations.css" />
+  <link rel="stylesheet" href="./assets/css/main.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       ❶  HERO
+  ═══════════════════════════════════════════ -->
+  <section class="hero" aria-label="Sección principal">
+    <img
+      class="hero__img"
+      src="./assets/images/hero-banner.jpg"
+      alt="Mujer escribiendo en un diario — Taller Vuelve a Ti"
+      loading="eager"
+      fetchpriority="high"
+      onload="this.classList.add('loaded')"
+    />
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <div class="hero__content">
+      <h1 class="hero-title"><em>Vuelve</em> a Ti</h1>
+
+      <p class="hero-subtitle">
+        Taller gratuito de 4 días de Escritura Terapéutica para sanar tu autoestima,
+        recuperar tu voz y reconectar con tu poder personal.
+      </p>
+
+      <div class="hero-date" aria-label="Fecha de inicio">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+        Inicia el <strong>20 de Mayo</strong>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#registro" class="btn btn--gold btn--lg cta-pulse">
+          Quiero mi lugar
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Reproductor de audio -->
+      <div class="hero-player" aria-label="Canción oficial del taller">
+        <div id="audio-player-container"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       ❷  IDENTIFICACIÓN EMOCIONAL
+  ═══════════════════════════════════════════ -->
+  <section class="emotional" aria-label="¿Esto es para ti?">
+    <div class="container">
+      <span class="section-label" data-animate>Para ti, que…</span>
+
+      <h2 class="emotional__heading" data-animate>
+        ¿Te has olvidado<br>de ti misma?
+      </h2>
+
+      <p class="emotional__intro" data-animate>
+        Si alguna de estas frases resuena contigo, este taller fue
+        creado especialmente para acompañarte.
+      </p>
+
+      <div class="emotional__cards">
+        <div class="emotional__card" data-animate>
+          <svg class="emotional__card-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+          Te has sentido agotada emocionalmente dando todo a los demás…
+        </div>
+        <div class="emotional__card" data-animate>
+          <svg class="emotional__card-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="4.93" x2="19.07" y1="4.93" y2="19.07"/></svg>
+          Te cuesta poner límites y decir que no sin sentirte culpable…
+        </div>
+        <div class="emotional__card" data-animate>
+          <svg class="emotional__card-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Dudas de tu valor y buscas aprobación fuera de ti…
+        </div>
+        <div class="emotional__card" data-animate>
+          <svg class="emotional__card-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+          Sientes que perdiste tu identidad dentro de relaciones o responsabilidades…
+        </div>
+        <div class="emotional__card" data-animate>
+          <svg class="emotional__card-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/></svg>
+          Deseas sanar heridas emocionales y volver a creer en ti misma…
+        </div>
+        <div class="emotional__card" data-animate>
+          <svg class="emotional__card-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Quieres comenzar una nueva etapa con claridad, confianza y propósito…
+        </div>
+      </div>
+
+      <p class="emotional__close" data-animate>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin-right:.35rem;color:var(--gold)"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+        Este taller es para ti.
+      </p>
+
+      <div class="divider" data-animate>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+        </svg>
+      </div>
+
+      <a href="#registro" class="btn btn--primary" data-animate>
+        Quiero registrarme ahora
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       ❸  BENEFICIOS
+  ═══════════════════════════════════════════ -->
+  <section class="benefits" aria-label="Qué obtendrás">
+    <div class="container">
+      <span class="section-label" data-animate>Lo que llevarás contigo</span>
+
+      <h2 class="benefits__heading" data-animate>
+        En 4 días transformarás<br>tu relación contigo misma
+      </h2>
+
+      <div class="benefits__grid">
+        <div class="benefit-item" data-animate>
+          <div class="benefit-item__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+          </div>
+          <span>Fortalecer tu autoestima desde adentro</span>
+        </div>
+        <div class="benefit-item" data-animate>
+          <div class="benefit-item__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <span>Recuperar tu confianza y tu voz interior</span>
+        </div>
+        <div class="benefit-item" data-animate>
+          <div class="benefit-item__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+          </div>
+          <span>Sanar patrones emocionales que te limitan</span>
+        </div>
+        <div class="benefit-item" data-animate>
+          <div class="benefit-item__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <span>Usar la escritura como herramienta de liberación</span>
+        </div>
+        <div class="benefit-item" data-animate>
+          <div class="benefit-item__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <span>Sentirte más fuerte, clara y centrada</span>
+        </div>
+        <div class="benefit-item" data-animate>
+          <div class="benefit-item__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21 4 19 2c-2-2-4-2-5.5-.5L10 5 1.8 6.2l2.8 2.8-.8 4.4 4.4-.8 2.8 2.8 4.4-.8z"/><path d="m16 11-4.3-4.3"/></svg>
+          </div>
+          <span>Iniciar una nueva etapa de tu vida con propósito</span>
+        </div>
+        <div class="benefit-item" data-animate>
+          <div class="benefit-item__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <span>Reconectar con tu identidad auténtica</span>
+        </div>
+        <div class="benefit-item" data-animate>
+          <div class="benefit-item__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg>
+          </div>
+          <span>Desarrollar liderazgo personal en tu propia vida</span>
+        </div>
+      </div>
+
+      <a href="#registro" class="btn btn--gold btn--lg" data-animate>
+        Entrar al taller gratis
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       ❹  LOS 4 DÍAS
+  ═══════════════════════════════════════════ -->
+  <section class="days" id="programa" aria-label="Programa del taller">
+    <div class="container">
+      <span class="section-label" data-animate>El programa</span>
+
+      <h2 class="days__heading" data-animate>4 días · 4 transformaciones</h2>
+      <p class="days__sub" data-animate>
+        Cada sesión es un paso profundo hacia tu reconexión interior.
+      </p>
+
+      <div class="days__grid">
+
+        <!-- Día 1 -->
+        <article class="day-card" data-animate>
+          <img
+            class="day-card__img"
+            src="./assets/images/dia1.jpg"
+            alt="Día 1 — Mujer escribiendo con paz y conciencia"
+            loading="lazy"
+          />
+          <div class="day-card__body">
+            <span class="day-badge">Día 1</span>
+            <h3 class="day-card__title">
+              ¿Cómo dejar de mendigar amor y empezar a valorarte?
+            </h3>
+            <p class="day-card__desc">
+              Identificarás cómo has buscado validación fuera de ti misma y comenzarás
+              a elegirte desde adentro.
+            </p>
+            <ul class="day-card__benefits">
+              <li>Reconocer patrones de necesidad afectiva</li>
+              <li>Fortalecer el amor propio</li>
+              <li>Soltar relaciones desgastantes</li>
+            </ul>
+            <a href="#registro" class="btn btn--outline">Quiero registrarme</a>
+          </div>
+        </article>
+
+        <!-- Día 2 -->
+        <article class="day-card" data-animate>
+          <img
+            class="day-card__img"
+            src="./assets/images/dia2.jpg"
+            alt="Día 2 — Persona reflexionando sobre su historia"
+            loading="lazy"
+          />
+          <div class="day-card__body">
+            <span class="day-badge">Día 2</span>
+            <h3 class="day-card__title">
+              La raíz de tu baja autoestima
+            </h3>
+            <p class="day-card__desc">
+              Explorarás el origen de tus inseguridades y comenzarás a reconstruir
+              tu autoestima desde la compasión y la conciencia.
+            </p>
+            <ul class="day-card__benefits">
+              <li>Comprender el origen de la baja autoestima</li>
+              <li>Sanar heridas internas</li>
+              <li>Mejorar tu autoimagen</li>
+            </ul>
+            <a href="#registro" class="btn btn--outline">Quiero registrarme</a>
+          </div>
+        </article>
+
+        <!-- Día 3 -->
+        <article class="day-card" data-animate>
+          <img
+            class="day-card__img"
+            src="./assets/images/dia3.jpg"
+            alt="Día 3 — Hombre reconectando con su fuerza interior"
+            loading="lazy"
+          />
+          <div class="day-card__body">
+            <span class="day-badge">Día 3</span>
+            <h3 class="day-card__title">
+              Recupera tu voz, tu energía y tu lugar
+            </h3>
+            <p class="day-card__desc">
+              Para quienes se han callado demasiado. Trabajarás límites sanos,
+              presencia personal y reconexión con tu fuerza interior.
+            </p>
+            <ul class="day-card__benefits">
+              <li>Aprender a poner límites</li>
+              <li>Recuperar seguridad al expresarte</li>
+              <li>Elevar tu energía personal</li>
+            </ul>
+            <a href="#registro" class="btn btn--outline">Quiero registrarme</a>
+          </div>
+        </article>
+
+        <!-- Día 4 -->
+        <article class="day-card" data-animate>
+          <img
+            class="day-card__img"
+            src="./assets/images/dia4.jpg"
+            alt="Día 4 — Persona liderando su vida con propósito"
+            loading="lazy"
+          />
+          <div class="day-card__body">
+            <span class="day-badge">Día 4</span>
+            <h3 class="day-card__title">
+              De sobrevivir a liderar tu vida
+            </h3>
+            <p class="day-card__desc">
+              Transformarás la mentalidad de supervivencia en liderazgo personal.
+              Tomarás decisiones conscientes y dirigirás tu vida con claridad.
+            </p>
+            <ul class="day-card__benefits">
+              <li>Mentalidad poderosa y clara</li>
+              <li>Liderazgo interno</li>
+              <li>Empoderamiento real y duradero</li>
+            </ul>
+            <a href="#registro" class="btn btn--outline">Quiero registrarme</a>
+          </div>
+        </article>
+
+      </div><!-- /.days__grid -->
+
+      <a href="#registro" class="btn btn--primary btn--lg" data-animate>
+        Deseo registrarme al taller
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       ❺  SOBRE ANGÉLICA
+  ═══════════════════════════════════════════ -->
+  <section class="about" id="angelica" aria-label="Sobre Angélica Montelongo">
+    <div class="container">
+      <div class="about__inner">
+        <div class="about__img-wrap" data-animate>
+          <img
+            class="about__img"
+            src="./assets/images/grupo-taller.jpg"
+            alt="Angélica Montelongo — Psicoterapeuta y Coach de Vida"
+            loading="lazy"
+            width="400"
+            height="500"
+          />
+        </div>
+
+        <div data-animate>
+          <span class="section-label">Tu guía en este proceso</span>
+          <h2 class="about__name">Angélica Montelongo</h2>
+          <p class="about__role">Psicoterapeuta · Coach de Vida · Escritura Terapéutica</p>
+
+          <p class="about__text">
+            Angélica es psicoterapeuta y coach de vida enfocada en transformación personal,
+            autoestima y crecimiento emocional. A través de la escritura terapéutica ha
+            acompañado a cientos de personas a sanar heridas internas, recuperar su confianza
+            y reconectar con su poder personal.
+          </p>
+
+          <br />
+
+          <p class="about__text">
+            Este taller nació de su misión de crear espacios seguros donde las personas puedan
+            expresarse, sanar y crecer. Con calidez, profesionalismo y un enfoque profundamente
+            humano, Angélica te guiará en cada paso de este proceso transformador.
+          </p>
+
+          <br />
+          <a href="#registro" class="btn btn--primary" style="margin-top:.5rem">
+            Quiero ser parte
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       ❻  FORMULARIO DE REGISTRO
+  ═══════════════════════════════════════════ -->
+  <section class="register" id="registro" aria-label="Formulario de registro">
+    <div class="container">
+      <span class="section-label" data-animate>Es tu momento</span>
+
+      <h2 class="register__heading" data-animate>
+        Reserva tu lugar<br><em style="font-style:italic;color:var(--gold-lt)">ahora mismo</em>
+      </h2>
+
+      <p class="register__sub" data-animate>
+        Son lugares limitados. Llena el formulario y
+        te llegará acceso directo por WhatsApp. ¡Es gratis!
+      </p>
+
+      <form class="register__form" id="registro-form" novalidate data-animate>
+        <div class="form-group">
+          <label for="nombre">Tu nombre</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="¿Cómo te llamas?"
+            autocomplete="given-name"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="correo">Correo electrónico</label>
+          <input
+            type="email"
+            id="correo"
+            name="correo"
+            placeholder="tu@correo.com"
+            autocomplete="email"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="whatsapp">WhatsApp (con código de país)</label>
+          <input
+            type="tel"
+            id="whatsapp"
+            name="whatsapp"
+            placeholder="+52 55 0000 0000"
+            autocomplete="tel"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn btn--gold btn--lg form-submit-btn cta-pulse">
+          Quiero mi lugar
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+
+        <p class="form-privacy">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin-right:.25rem"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Tu información está segura. No enviamos spam.
+          Al registrarte aceptas ser contactada por WhatsApp con
+          información del taller.
+        </p>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       ❼  FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <p class="footer__logo">angiemon.com</p>
+    <nav class="footer__links" aria-label="Links del footer">
+      <a href="https://angiemon.com" target="_blank" rel="noopener">Sitio oficial</a>
+      <a href="#registro">Registro</a>
+      <a href="#programa">Programa</a>
+      <a href="#angelica">Sobre Angélica</a>
+      <a href="#">Aviso de privacidad</a>
+    </nav>
+    <p class="footer__copy">
+      © 2026 Angélica Montelongo · Todos los derechos reservados
+    </p>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════
+       Sticky CTA (visible después del hero)
+  ═══════════════════════════════════════════ -->
+  <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+    <a href="#registro" class="btn btn--gold">
+      Quiero mi lugar — Gratis
+      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+  </div>
+
+
+  <!-- Scripts — módulos ES6 -->
+  <script type="module" src="./assets/js/app.js"></script>
+
+  <!-- Sticky CTA: se muestra al pasar el hero -->
+  <script>
+    const stickyCta = document.getElementById('sticky-cta');
+    const hero = document.querySelector('.hero');
+    const io = new IntersectionObserver(
+      ([e]) => {
+        stickyCta.classList.toggle('visible', !e.isIntersecting);
+        stickyCta.setAttribute('aria-hidden', String(e.isIntersecting));
+      },
+      { threshold: 0.1 }
+    );
+    io.observe(hero);
+  </script>
+</body>
+</html>
