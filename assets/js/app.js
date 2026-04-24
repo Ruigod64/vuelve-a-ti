@@ -6,6 +6,7 @@ import CONFIG from "./config.js";
 import { AudioPlayer } from "./modules/AudioPlayer.js";
 import { RegistrationForm } from "./modules/RegistrationForm.js";
 import { ScrollAnimator } from "./modules/ScrollAnimator.js";
+import { Lightbox } from "./modules/Lightbox.js";
 
 function init() {
   // 1. Reproductor de audio
@@ -15,11 +16,14 @@ function init() {
   // 2. Formulario de registro
   new RegistrationForm("registro-form", CONFIG);
 
-  // 3. Animaciones al hacer scroll
+  // 3. Lightbox para imágenes
+  new Lightbox('.emotional__quote-img, .day-card__img, .about__img');
+
+  // 4. Animaciones al hacer scroll
   const animator = new ScrollAnimator("[data-animate]", 0.12);
   animator.observe();
 
-  // 4. Smooth scroll para CTAs internos
+  // 5. Smooth scroll para CTAs internos
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener("click", (e) => {
       e.preventDefault();

@@ -73,8 +73,8 @@ export class AudioPlayer {
     return `
       <div class="audio-player">
         <button class="ap-btn" aria-label="Reproducir canción" type="button">
-          <span class="ap-icon-play">▶</span>
-          <span class="ap-icon-pause">⏸</span>
+          <span class="ap-icon-play"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg></span>
+          <span class="ap-icon-pause"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg></span>
         </button>
         <div class="ap-info">
           <p class="ap-title">♪ Hoy Vuelvo a Mí — Angélica Montelongo</p>

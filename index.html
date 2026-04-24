@@ -104,6 +104,25 @@
         </div>
       </div>
 
+      <div class="emotional__gallery" data-animate>
+        <figure class="emotional__quote-frame">
+          <img
+            src="./assets/images/mujer_frase_amor.jpeg"
+            alt="El amor que tienes que mendigar no es amor — Angélica Montelongo"
+            loading="lazy"
+            class="emotional__quote-img"
+          />
+        </figure>
+        <figure class="emotional__quote-frame">
+          <img
+            src="./assets/images/mujer_espejo.jpeg"
+            alt="Tu baja autoestima no nació contigo — Angélica Montelongo"
+            loading="lazy"
+            class="emotional__quote-img"
+          />
+        </figure>
+      </div>
+
       <p class="emotional__close" data-animate>
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin-right:.35rem;color:var(--gold)"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
         Este taller es para ti.
@@ -183,6 +202,33 @@
           </div>
           <span>Desarrollar liderazgo personal en tu propia vida</span>
         </div>
+      </div>
+
+      <div class="benefits__gallery" data-animate>
+        <figure class="emotional__quote-frame">
+          <img
+            src="./assets/images/mujer_paz.jpeg"
+            alt="Mujer en paz consigo misma — Taller Vuelve a Ti"
+            loading="lazy"
+            class="emotional__quote-img"
+          />
+        </figure>
+        <figure class="emotional__quote-frame">
+          <img
+            src="./assets/images/hombre_aliviado.jpeg"
+            alt="Persona sintiéndose aliviada y libre — Taller Vuelve a Ti"
+            loading="lazy"
+            class="emotional__quote-img"
+          />
+        </figure>
+        <figure class="emotional__quote-frame">
+          <img
+            src="./assets/images/conseguir.jpeg"
+            alt="Lograr tus metas personales — Taller Vuelve a Ti"
+            loading="lazy"
+            class="emotional__quote-img"
+          />
+        </figure>
       </div>
 
       <a href="#registro" class="btn btn--gold btn--lg" data-animate>
@@ -344,18 +390,15 @@
           <p class="about__role">Psicoterapeuta · Coach de Vida · Escritura Terapéutica</p>
 
           <p class="about__text">
-            Angélica es psicoterapeuta y coach de vida enfocada en transformación personal,
-            autoestima y crecimiento emocional. A través de la escritura terapéutica ha
-            acompañado a cientos de personas a sanar heridas internas, recuperar su confianza
-            y reconectar con su poder personal.
+            Angélica Montelongo es psicoterapeuta, coach de vida y facilitadora en Programación Neurolingüística (PNL), especializada en procesos de autoestima, autoconocimiento, sanación emocional y crecimiento personal.  
+
+            Acompaña a las personas a transformar patrones limitantes, fortalecer su confianza y reconectar con su poder interior mediante herramientas terapéuticas, escritura consciente, técnicas de PNL y estrategias prácticas de desarrollo personal.
           </p>
 
           <br />
 
           <p class="about__text">
-            Este taller nació de su misión de crear espacios seguros donde las personas puedan
-            expresarse, sanar y crecer. Con calidez, profesionalismo y un enfoque profundamente
-            humano, Angélica te guiará en cada paso de este proceso transformador.
+            En este taller, Angélica te guiará en un proceso transformador para ayudarte a volver a ti.
           </p>
 
           <br />
@@ -418,6 +461,7 @@
             name="whatsapp"
             placeholder="+52 55 0000 0000"
             autocomplete="tel"
+            inputmode="tel"
             required
           />
         </div>
@@ -434,6 +478,16 @@
           información del taller.
         </p>
       </form>
+      <div class="register__gallery" data-animate>
+        <figure class="emotional__quote-frame">
+          <img
+            src="./assets/images/importante.jpeg"
+            alt="Mensaje importante — Taller Vuelve a Ti"
+            loading="lazy"
+            class="emotional__quote-img"
+          />
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -466,6 +520,14 @@
     </a>
   </div>
 
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+    <button class="lightbox__close" id="lightbox-close" aria-label="Cerrar">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <img class="lightbox__img" id="lightbox-img" src="" alt="" />
+  </div>
 
   <!-- Scripts — módulos ES6 -->
   <script type="module" src="./assets/js/app.js"></script>

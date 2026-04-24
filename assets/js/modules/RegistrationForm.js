@@ -1,13 +1,7 @@
-/**
- * RegistrationForm.js
- * Single Responsibility: gestiona validación, envío del formulario y redirección.
- * Dependency Inversion: recibe la config como parámetro (no la importa directamente).
- */
+import { db } from "./firebase.js";
+import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
 export class RegistrationForm {
-  /**
-   * @param {string} formId  ID del elemento <form>
-   * @param {{ API_BASE_URL: string, WHATSAPP_NUMBER: string, WHATSAPP_MESSAGE: string }} config
-   */
   constructor(formId, config) {
     this._form = document.getElementById(formId);
     this._config = config;
@@ -20,6 +14,23 @@ export class RegistrationForm {
       e.preventDefault();
       this._handleSubmit();
     });
+
+    const waInput = this._form.querySelector('[name="whatsapp"]');
+    if (waInput) {
+      waInput.addEventListener("input", () => {
+        const pos = waInput.selectionStart;
+        const clean = waInput.value.replace(/[^\d+\s\-()]/g, "");
+        if (clean !== waInput.value) {
+          waInput.value = clean;
+          waInput.setSelectionRange(pos - 1, pos - 1);
+        }
+      });
+      waInput.addEventListener("keydown", (e) => {
+        const allowed = /[\d+\s\-()]/;
+        const ctrl = e.ctrlKey || e.metaKey;
+        if (!ctrl && e.key.length === 1 && !allowed.test(e.key)) e.preventDefault();
+      });
+    }
   }
 
   async _handleSubmit() {
@@ -31,20 +42,24 @@ export class RegistrationForm {
     this._setLoading(true);
 
     try {
-      await this._postRegistration(data);
-    } catch (_) {
-      // Si el backend no está disponible, igual redirige a WhatsApp
+      await addDoc(collection(db, "registros"), {
+        ...data,
+        fecha: serverTimestamp(),
+      });
+      this._showSuccess();
+      setTimeout(() => this._redirectWhatsApp(data), 1800);
+    } catch (err) {
+      console.error("Error al guardar registro:", err);
+      this._showError("Ocurrió un error. Intenta de nuevo.");
     } finally {
       this._setLoading(false);
-      this._showSuccess();
-      setTimeout(() => this._redirectWhatsApp(data.nombre), 1800);
     }
   }
 
   _getFormData() {
     return {
-      nombre: this._val("nombre"),
-      correo: this._val("correo"),
+      nombre:   this._val("nombre"),
+      correo:   this._val("correo"),
       whatsapp: this._val("whatsapp"),
     };
   }
@@ -62,17 +77,10 @@ export class RegistrationForm {
     return null;
   }
 
-  async _postRegistration(data) {
-    const res = await fetch(`${this._config.API_BASE_URL}/api/register`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-    return res.json();
-  }
-
-  _redirectWhatsApp(nombre) {
-    const msg = encodeURIComponent(this._config.WHATSAPP_MESSAGE);
+  _redirectWhatsApp(data) {
+    const msg = encodeURIComponent(
+      `Hola Angélica, acabo de registrarme al taller Vuelve a Ti y quiero recibir acceso.\n\nNombre: ${data.nombre}\nCorreo: ${data.correo}\nWhatsApp: ${data.whatsapp}`
+    );
     window.open(`https://wa.me/${this._config.WHATSAPP_NUMBER}?text=${msg}`, "_blank");
   }
 
@@ -81,7 +89,7 @@ export class RegistrationForm {
     const btn = this._form.querySelector(".form-submit-btn");
     if (!btn) return;
     btn.disabled = isLoading;
-    btn.textContent = isLoading ? "Enviando…" : "👉 Quiero mi lugar";
+    btn.textContent = isLoading ? "Enviando…" : "Quiero mi lugar";
   }
 
   _showError(msg) {
