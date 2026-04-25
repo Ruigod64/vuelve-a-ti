@@ -1,5 +1,5 @@
 import { db } from "./firebase.js";
-import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { collection, addDoc, serverTimestamp, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 export class RegistrationForm {
   constructor(formId, config) {
@@ -42,6 +42,13 @@ export class RegistrationForm {
     this._setLoading(true);
 
     try {
+      const q = query(collection(db, "registros"), where("correo", "==", data.correo));
+      const existing = await getDocs(q);
+      if (!existing.empty) {
+        this._showFeedback("Ya estás registrada. ¡Te esperamos el 20 de Mayo! 🌿", "success");
+        setTimeout(() => this._redirectWhatsApp(data), 1800);
+        return;
+      }
       await addDoc(collection(db, "registros"), {
         ...data,
         fecha: serverTimestamp(),
