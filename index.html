@@ -566,15 +566,6 @@
   </footer>
 
 
-  <!-- ═══════════════════════════════════════════
-       Sticky CTA (visible después del hero)
-  ═══════════════════════════════════════════ -->
-  <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
-    <a href="#registro" class="btn btn--gold">
-      Quiero mi lugar — Gratis
-      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-    </a>
-  </div>
 
 
   <!-- Lightbox -->
@@ -588,18 +579,5 @@
   <!-- Scripts — módulos ES6 -->
   <script type="module" src="./assets/js/app.js"></script>
 
-  <!-- Sticky CTA: se muestra al pasar el hero -->
-  <script>
-    const stickyCta = document.getElementById('sticky-cta');
-    const hero = document.querySelector('.hero');
-    const io = new IntersectionObserver(
-      ([e]) => {
-        stickyCta.classList.toggle('visible', !e.isIntersecting);
-        stickyCta.setAttribute('aria-hidden', String(e.isIntersecting));
-      },
-      { threshold: 0.1 }
-    );
-    io.observe(hero);
-  </script>
 </body>
 </html>
