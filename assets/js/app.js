@@ -17,7 +17,7 @@ function init() {
   new RegistrationForm("registro-form", CONFIG);
 
   // 3. Lightbox para imágenes
-  new Lightbox('.emotional__quote-img, .day-card__img, .about__img');
+  new Lightbox('.emotional__quote-img, .day-card__img, .about__img, .wa-groups__img');
 
   // 4. Animaciones al hacer scroll
   const animator = new ScrollAnimator("[data-animate]", 0.12);
