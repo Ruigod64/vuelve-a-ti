@@ -1194,38 +1194,191 @@ h1, h2, h3, h4 {
 
 /* ── ❼ FOOTER ───────────────────────────────── */
 .footer {
-  background: var(--olive-900);
-  border-top: 1px solid rgba(196,163,90,.2);
-  padding: 2.75rem 1.5rem;
-  text-align: center;
+  background: linear-gradient(170deg, var(--olive-900) 0%, #1a220d 60%, #0f1608 100%);
+  border-top: 1px solid rgba(196,163,90,.22);
+  position: relative;
+  overflow: hidden;
 }
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: -80px; left: 50%;
+  transform: translateX(-50%);
+  width: 700px; height: 400px;
+  background: radial-gradient(ellipse at center top, rgba(196,163,90,.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  padding: 4rem 1.5rem 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Marca */
+.footer__brand { max-width: 220px; }
 
 .footer__logo {
   font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
+  font-size: 1.55rem;
+  font-weight: 700;
   color: var(--gold);
-  margin-bottom: 0.85rem;
-}
-
-.footer__links {
+  margin-bottom: 0.55rem;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.1rem;
-  margin-bottom: 1rem;
+  align-items: center;
+  gap: 0.4rem;
 }
 
-.footer__links a {
-  font-size: 0.8rem;
+.footer__logo span { color: var(--gold-lt); font-size: 1rem; }
+
+.footer__tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.88rem;
+  color: var(--beige-300);
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+}
+
+/* Navs */
+.footer__nav-title {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.1rem;
+}
+
+.footer__nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.footer__nav-list a {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85rem;
+  color: var(--beige-200);
+  text-decoration: none;
+  transition: color var(--transition), padding-left var(--transition);
+  display: inline-block;
+}
+
+.footer__nav-list a:hover {
+  color: var(--gold-lt);
+  padding-left: 4px;
+}
+
+/* Contacto */
+.footer__contact-item {
+  margin-bottom: 0.4rem;
+}
+
+.footer__contact-item a {
+  font-size: 0.85rem;
   color: var(--beige-200);
   text-decoration: none;
   transition: color var(--transition);
 }
-.footer__links a:hover { color: var(--gold-lt); }
+.footer__contact-item a:hover { color: var(--gold-lt); }
+
+/* Social */
+.footer__social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.social-link {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(196,163,90,.12);
+  border: 1px solid rgba(196,163,90,.25);
+  color: var(--beige-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background var(--transition), border-color var(--transition), color var(--transition), transform var(--transition);
+  flex-shrink: 0;
+}
+
+.social-link:hover {
+  background: rgba(196,163,90,.25);
+  border-color: rgba(196,163,90,.6);
+  color: var(--gold-lt);
+  transform: translateY(-3px);
+}
+
+/* Bottom bar */
+.footer__bottom {
+  border-top: 1px solid rgba(196,163,90,.15);
+  position: relative;
+  z-index: 1;
+}
+
+.footer__bottom .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding-top: 1.4rem;
+  padding-bottom: 1.6rem;
+  text-align: center;
+}
 
 .footer__copy {
-  font-size: 0.75rem;
+  font-size: 0.73rem;
   color: var(--text-lt);
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+}
+
+.footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.footer__legal a {
+  font-size: 0.72rem;
+  color: var(--text-lt);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color var(--transition);
+}
+.footer__legal a:hover { color: var(--gold-lt); }
+
+/* Footer responsive */
+@media (min-width: 600px) {
+  .footer__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  .footer__bottom .container {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+@media (min-width: 900px) {
+  .footer__inner {
+    grid-template-columns: 1.2fr 1fr 1fr 1.1fr;
+    gap: 2.5rem;
+    padding: 5rem 1.5rem 4rem;
+  }
+  .footer__brand { max-width: none; }
 }
 
 /* ── Sticky CTA Bar (mobile) ─────────────────── */
